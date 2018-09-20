@@ -15,7 +15,11 @@ public class CameraFollowSCript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 cameraPos = new Vector3(playerObject.transform.position.x + xOffset, playerObject.transform.position.y + yOffset, playerObject.transform.position.z + zOffset);
-        transform.position = cameraPos;
+        if(playerObject != null)
+        {
+            Vector3 cameraPos = new Vector3(playerObject.transform.position.x + xOffset, playerObject.transform.position.y + yOffset, playerObject.transform.position.z + zOffset);
+            transform.position = cameraPos;
+        }
+
 	}
 }
