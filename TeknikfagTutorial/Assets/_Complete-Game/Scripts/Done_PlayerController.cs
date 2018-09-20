@@ -18,8 +18,8 @@ public class Done_PlayerController : MonoBehaviour
 	public float fireRate;
 	 
 	private float nextFire;
-	
-	void Update ()
+
+    void Update ()
 	{
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
 		{
@@ -28,6 +28,8 @@ public class Done_PlayerController : MonoBehaviour
 			GetComponent<AudioSource>().Play ();
 		}
 	}
+
+    
 
 	void FixedUpdate ()
 	{
@@ -44,6 +46,6 @@ public class Done_PlayerController : MonoBehaviour
 			Mathf.Clamp (GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
 		);
 		
-		GetComponent<Rigidbody>().rotation = Quaternion.Euler (0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
-	}
+        GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+    }
 }
