@@ -40,7 +40,14 @@ public class Done_GameController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
+        if (gameOver)
+        {
+            restartText.text = "Press 'R' for Restart";
+            restart = true;
+            
+        }
     }
+
 
     IEnumerator SpawnWaves()
     {
@@ -57,12 +64,7 @@ public class Done_GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
 
-            if (gameOver)
-            {
-                restartText.text = "Press 'R' for Restart";
-                restart = true;
-                break;
-            }
+            
         }
     }
 
